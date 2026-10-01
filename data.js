@@ -1,17 +1,17 @@
-// 作品名・説明・写真・所属展示室・順番はこのファイルで編集します。
+// このファイルは編集画面、または手作業で編集できます。
 window.EXHIBITION_DATA = {
   "rooms": [
     {
       "id": "room-01",
-      "name": "○○○号室",
-      "label": "ROOM 01",
+      "name": "物大",
+      "label": "ROOM Butudai",
       "image": "images/room-01.svg",
       "alt": "白い曲線が重なる展示室の抽象ビジュアル"
     },
     {
       "id": "room-02",
-      "name": "×××号室",
-      "label": "ROOM 02",
+      "name": "高３−１",
+      "label": "ROOM H3-1",
       "image": "images/room-02.svg",
       "alt": "光と格子が交差する展示室の抽象ビジュアル"
     }
@@ -46,19 +46,6 @@ window.EXHIBITION_DATA = {
     {
       "id": "work-03",
       "slug": "automatic-guitar",
-      "number": "03",
-      "name": "住宅模型",
-      "roomId": "room-01",
-      "order": 3,
-      "summary": "",
-      "mechanism": "",
-      "points": "",
-      "images": [],
-      "youtubeId": ""
-    },
-    {
-      "id": "work-04",
-      "slug": "lion-robot",
       "number": "04",
       "name": "ホログラム",
       "roomId": "room-01",
@@ -70,8 +57,8 @@ window.EXHIBITION_DATA = {
       "youtubeId": ""
     },
     {
-      "id": "work-05",
-      "slug": "pipe-organ",
+      "id": "work-04",
+      "slug": "lion-robot",
       "number": "05",
       "name": "トランスフォーマー",
       "roomId": "room-01",
@@ -83,10 +70,10 @@ window.EXHIBITION_DATA = {
       "youtubeId": ""
     },
     {
-      "id": "work-06",
-      "slug": "house-model",
+      "id": "work-05",
+      "slug": "pipe-organ",
       "number": "06",
-      "name": "４脚ロボット",
+      "name": "4脚ロボット",
       "roomId": "room-01",
       "order": 6,
       "summary": "",
@@ -96,8 +83,8 @@ window.EXHIBITION_DATA = {
       "youtubeId": ""
     },
     {
-      "id": "work-07",
-      "slug": "air-hockey",
+      "id": "work-06",
+      "slug": "house-model",
       "number": "07",
       "name": "パイプオルガン",
       "roomId": "room-01",
@@ -109,8 +96,8 @@ window.EXHIBITION_DATA = {
       "youtubeId": ""
     },
     {
-      "id": "work-08",
-      "slug": "car-racing",
+      "id": "work-07",
+      "slug": "air-hockey",
       "number": "08",
       "name": "コイルガン",
       "roomId": "room-01",
@@ -122,12 +109,25 @@ window.EXHIBITION_DATA = {
       "youtubeId": ""
     },
     {
-      "id": "work-09",
-      "slug": "magic-wand-1",
+      "id": "work-08",
+      "slug": "car-racing",
       "number": "09",
       "name": "ゴミ箱ロボット",
+      "roomId": "room-02",
+      "order": 0,
+      "summary": "",
+      "mechanism": "",
+      "points": "",
+      "images": [],
+      "youtubeId": ""
+    },
+    {
+      "id": "work-09",
+      "slug": "magic-wand-1",
+      "number": "03",
+      "name": "住宅模型",
       "roomId": "room-01",
-      "order": 1,
+      "order": 3,
       "summary": "",
       "mechanism": "",
       "points": "",
@@ -140,7 +140,7 @@ window.EXHIBITION_DATA = {
       "number": "10",
       "name": "カーレース",
       "roomId": "room-02",
-      "order": 2,
+      "order": 1,
       "summary": "",
       "mechanism": "",
       "points": "",
@@ -153,7 +153,7 @@ window.EXHIBITION_DATA = {
       "number": "11",
       "name": "イライラ棒",
       "roomId": "room-02",
-      "order": 3,
+      "order": 2,
       "summary": "",
       "mechanism": "",
       "points": "",
@@ -166,7 +166,7 @@ window.EXHIBITION_DATA = {
       "number": "12",
       "name": "中１ゲー",
       "roomId": "room-02",
-      "order": 4,
+      "order": 3,
       "summary": "",
       "mechanism": "",
       "points": "",
@@ -179,7 +179,7 @@ window.EXHIBITION_DATA = {
       "number": "13",
       "name": "エアホッケー",
       "roomId": "room-02",
-      "order": 5,
+      "order": 4,
       "summary": "",
       "mechanism": "",
       "points": "",
@@ -192,12 +192,24 @@ window.EXHIBITION_DATA = {
       "number": "14",
       "name": "自動演奏ギター",
       "roomId": "room-02",
-      "order": 6,
+      "order": 5,
       "summary": "",
       "mechanism": "",
       "points": "",
       "images": [],
       "youtubeId": ""
     }
-  ]
+  ],
+  "site": {
+    "title": "物理部無線班",
+    "english": "BUTSUMU CLUB",
+    "tagline": "キャッチコピー",
+    "intro": "入力してください",
+    "roomIntro": "ふたつの部屋から、\n作品をめぐる。",
+    "roomNote": "展示室名・作品の配置は仮のものです。",
+    "archiveNote": "作品写真・説明文は準備中です。",
+    "about": "動くもの。音を奏でるもの。\n光るもの。遊べるもの。\n\n物理部無線班の文化祭展示を、\nひとつひとつの作品から紹介します。\n\n気になる作品から、その仕組みや\nものづくりの面白さに触れてみてください。",
+    "heroImage": "images/architecture.svg",
+    "heroAlt": "曲線と光の重なりを表現した抽象的な建築ビジュアル"
+  }
 };
