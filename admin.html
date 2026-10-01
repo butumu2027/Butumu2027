@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data: https:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>展示を編集 | 物理部無線班</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="admin.css">
+  <script type="module" src="admin.js"></script>
+</head>
+<body>
+  <a class="skip" href="#editor">編集フォームへ移動</a>
+  <header class="header"><a class="brand" href="index.html">∿ <span>物理部無線班<small>EXHIBITION EDITOR</small></span></a><nav><a href="index.html" target="_blank" rel="noopener">公開サイト ↗</a><button id="connection" type="button">GitHubに接続</button></nav></header>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">YOUR EXHIBITION, IN THE MAKING.</p><h1>展示を、整える。</h1><p>作品や展示室を編集して、サイトに公開できます。</p></div><div class="publish-area"><span id="dirty-state">読み込み中</span><button class="primary" id="publish" disabled>保存して公開 ↗</button></div></div>
+    <div id="status" class="status" role="status" aria-live="polite">GitHubから最新の展示データを読み込んでいます…</div>
+    <div class="toolbar"><div class="tabs" role="group" aria-label="編集対象"><button data-tab="works" aria-pressed="true">作品 <span id="work-count"></span></button><button data-tab="rooms" aria-pressed="false">展示室</button><button data-tab="site" aria-pressed="false">トップページ</button></div><div class="tools"><button id="download">下書きを保存</button><button id="import">下書きを開く</button><button id="reload">最新データを読み込む</button><input type="file" id="draft-file" accept="application/json,.json" hidden></div></div>
+    <div class="workspace"><aside id="sidebar"><label class="search-label" for="search">作品を探す</label><input id="search" type="search" placeholder="作品名で検索"><div id="item-list" class="item-list"></div><button id="add" class="add">＋ 作品を追加</button></aside><section id="editor" class="editor" tabindex="-1"><p>読み込み中…</p></section></div>
+    <footer>EXHIBITION EDITOR <span>butumu2027 / Butumu2027</span></footer>
+  </main>
+  <dialog id="connect-dialog" aria-labelledby="connect-title">
+    <div class="dialog-heading"><p class="eyebrow">CONNECT TO GITHUB</p><button type="button" id="close-connect" aria-label="閉じる">×</button></div>
+    <h2 id="connect-title">公開するための接続</h2>
+    <p>初回はGitHubで、このサイト専用の認証キーを作成します。次回からは同じキーを入力して接続できます。</p>
+    <details><summary>初回の設定手順を見る</summary><ol><li>GitHubに <strong>butumu2027</strong> のアカウントでログインします。</li><li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">認証キーの作成画面を開く ↗</a></li><li>Token nameに「物理部サイト編集」、Expirationに利用する期間を指定します。</li><li>Resource ownerを <strong>butumu2027</strong>、Repository accessを <strong>Only select repositories</strong> にして、<strong>Butumu2027</strong> を選びます。</li><li>Permissionsで <strong>Contents → Read and write</strong> を追加します。Metadataは自動で付く設定のままで構いません。</li><li>Generate tokenを押し、表示されたキーを下の入力欄に貼り付けます。</li></ol></details>
+    <form id="connect-form"><label for="token">GitHubの認証キー</label><input id="token" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…" required><p class="hint">キーはGitHubとの通信にだけ使います。この画面を閉じると消え、下書きや公開ファイルには保存されません。チャットには貼り付けないでください。</p><p id="connect-status" role="status"></p><button class="primary" type="submit">接続する</button><button type="button" id="disconnect">接続を解除</button></form>
+  </dialog>
+  <dialog id="preview-dialog" aria-labelledby="preview-title"><div class="dialog-heading"><p class="eyebrow">WORK PREVIEW</p><button type="button" id="close-preview" aria-label="閉じる">×</button></div><div id="preview-content"></div></dialog>
+  <noscript>編集画面を使うにはJavaScriptを有効にしてください。</noscript>
+</body>
+</html>
